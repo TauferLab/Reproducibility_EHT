@@ -11,23 +11,15 @@
    * For Mac users:  `md5 EHTC_FirstM87Results_Apr2019_csv.tgz`
    * For Windows users: `certutil -hashfile EHTC_FirstM87Results_Apr2019_csv.tgz MD5`
 
-3. To find the checksum of the container image, please open a new terminal window. Then, run the following command: `docker images --digests`. 
-
-4. The `md5sum` of the data should be matching to this: `fe11e10a4f9562cb6a2846206d86860c`. 
+3. The `md5sum` of the data should be matching to this: `fe11e10a4f9562cb6a2846206d86860c`. 
    * If the checksums are matching, this means that the data in the repository has not been corrupted or modified. **_Everything should be ready to use!_**
-   * If the checksums differ, you will end up using the data from the time this container was built, which is stored in the `EHTC_FirstM87Results_Apr2019_csv.tgz` tarball in the root directory of this repo. You do not have to do anything with this tarball yet.
+   * If the checksums differ, you will end up using the data from the time this container was built, which is stored in the `EHTC_FirstM87Results_Apr2019_csv.tgz` tarball in the `data_validation` directory. You do not have to do anything with this tarball.
 
 ------------------------------------------------------------------
 
-## Docker Build Instructions
+## Data-Validation Container Build Instructions
 
 1. Docker image is available on our DockerHub [here](https://hub.docker.com/r/globalcomputinglab/reproducibility-eht/tags). Pull the `data-validation` container using the command `docker pull globalcomputinglab/reproducibility-eht:data-validation`.
-   * If **_manual build_** is desired, please do the following, then continue on with steps 2 and 3 after completion: 
-
-      1. Run `cd Src_EHT/data_validation` from the root of the `Src_EHT` repository.
-
-      2. Please run the following command from the `Src_EHT/data_validation` directory: `docker build --tag validate_data -f data_validation.dockerfile .` This will build the Docker container image using the dockerfile in the container.
-
 
 2. Once it has finished building the image, please run the following command: `docker run -it -p 9000:8888 validate_data`. This runs the container and forwards everything from `port 8888` in the container to the local machine's `port 9000` (or any other port number above). This will allow you to interact with the container locally.
 
@@ -84,3 +76,4 @@ Here is what the outputs of the notebook (or `ReproducePlots.py` script):
 ![Short telescope baselines](https://github.com/TauferLab/Src_EHT/blob/main/data_validation/expected_outputs/Close_Up_Frequencies.jpg)
 
 ![Telescope baselines for all days - Both high and low](https://github.com/TauferLab/Src_EHT/blob/main/data_validation/expected_outputs/Reproduced_All_Days.jpg)
+
