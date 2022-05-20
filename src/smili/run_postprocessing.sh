@@ -15,23 +15,22 @@ for d in 095 096 100 101; do
     python smili_postprocessing.py \
         -i  ./smili_reconstructions/SR1_M87_2017_${d}_hi_hops_netcal_StokesI.fits \
         -o  ./post/SR1_M87_2017_${d}_processed.pdf \
-        
-	# --blur --afmhot10us --notitle
+        --all
 done
 
 # For succesion / timeline of steps:
 # fits -> pipeline output image -> EHTIM script: none(afmhot) -> EHTIM script: blur(afmhot) -> EHTIM script: blur(afmhot_10us)
-python smili_postprocessing.py \
-    -i  ./smili_reconstructions/SR1_M87_2017_101_hi_hops_netcal_StokesI.fits \
-    -o  ./post/SR1_M87_2017_101_afmhot.pdf \
-    --notitle
+#python smili_postprocessing.py \
+#    -i  ./smili_reconstructions/SR1_M87_2017_101_hi_hops_netcal_StokesI.fits \
+#    -o  ./post/SR1_M87_2017_101_afmhot.pdf \
+#    --notitle
 
-python smili_postprocessing.py \
-    -i  ./smili_reconstructions/SR1_M87_2017_101_hi_hops_netcal_StokesI.fits \
-    -o  ./post/SR1_M87_2017_101_afmhot10us.pdf \
-    --afmhot10us --notitle 
+#python smili_postprocessing.py \
+#    -i  ./smili_reconstructions/SR1_M87_2017_101_hi_hops_netcal_StokesI.fits \
+#    -o  ./post/SR1_M87_2017_101_afmhot10us.pdf \
+#    --afmhot10us --notitle 
 
-python smili_postprocessing.py \
-    -i  ./smili_reconstructions/SR1_M87_2017_101_hi_hops_netcal_StokesI.fits \
-    -o  ./post/SR1_M87_2017_101_afmhot10us_blur.pdf \
-    --blur --notitle --afmhot10us --beam 
+#python smili_postprocessing.py \
+#    -i  ./smili_reconstructions/SR1_M87_2017_101_hi_hops_netcal_StokesI.fits \
+#    -o  ./post/SR1_M87_2017_101_afmhot10us_blur.pdf \
+#    --blur --notitle --afmhot10us --beam 

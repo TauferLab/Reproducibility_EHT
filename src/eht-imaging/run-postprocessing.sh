@@ -16,23 +16,23 @@ for d in 095 096 100 101; do
     python eht-imaging_postprocessing.py \
         -i  ../../output/EHT-Imaging/SR1_M87_2017_${d}.fits \
         -o  ../../output/EHT-Imaging/SR1_M87_2017_${d}_processed.pdf \
-        --blur --afmhot10us --notitle
+        --all
 done
 
 # For succesion / timeline of steps as presented in UTK eScience21 Poster:
 # fits -> pipeline output image -> EHTIM script: none(afmhot) -> EHTIM script: none(afmhot_10us) -> EHTIM script: blur(afmhot_10us)
-python eht-imaging_postprocessing.py \
-    -i  ../../output/EHT-Imaging/SR1_M87_2017_101.fits \
-    -o  ../../output/EHT-Imaging/SR1_M87_2017_101_afmhot.pdf \
-    --notitle
+#python eht-imaging_postprocessing.py \
+#    -i  ../../output/EHT-Imaging/SR1_M87_2017_101.fits \
+#    -o  ../../output/EHT-Imaging/SR1_M87_2017_101_afmhot.pdf \
+#    --notitle
 
-python eht-imaging_postprocessing.py \
-    -i  ../../output/EHT-Imaging/SR1_M87_2017_101.fits \
-    -o  ../../output/EHT-Imaging/SR1_M87_2017_101_afmhot10us.pdf \
-    --notitle --afmhot10us
+#python eht-imaging_postprocessing.py \
+#    -i  ../../output/EHT-Imaging/SR1_M87_2017_101.fits \
+#    -o  ../../output/EHT-Imaging/SR1_M87_2017_101_afmhot10us.pdf \
+#    --notitle --afmhot10us
 
-python eht-imaging_postprocessing.py \
-    -i  ../../output/EHT-Imaging/SR1_M87_2017_101.fits \
-    -o  ../../output/EHT-Imaging/SR1_M87_2017_101_afmhot10us_blur.pdf \
-    --blur --notitle --afmhot10us
+#python eht-imaging_postprocessing.py \
+#    -i  ../../output/EHT-Imaging/SR1_M87_2017_101.fits \
+#    -o  ../../output/EHT-Imaging/SR1_M87_2017_101_afmhot10us_blur.pdf \
+#    --blur --notitle --afmhot10us
 

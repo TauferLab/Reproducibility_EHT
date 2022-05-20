@@ -47,7 +47,7 @@ im_obj = eh.image.load_fits(args.infile)
 params = [8.29e-11, 8.29e-11, 0] # This is for EHT-Imaging (17.1 uas) in Paper IV
 
 # Blur the image object using Gaussian blur if specified
-if(args.blur or args.all): im_obj.blur_gauss(params)
+if(args.blur or args.all): im_obj = im_obj.blur_gauss(params)
 
 # Display image object
 if(args.beam or args.all):
