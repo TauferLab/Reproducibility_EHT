@@ -14,12 +14,16 @@ The [`eht-imaging`](https://github.com/achael/eht-imaging) repository contains t
   * `run-postprocessing.sh` -- runs the post-processing script on all observation days
 
 ## Pulling and Running the Container
+The Docker image is available on our DockerHub [here](https://hub.docker.com/r/globalcomputinglab/reproducibility-eht/tags). Pull the `eht-imaging` container using the command
+
 ```
 docker pull globalcomputinglab/reproducibility-eht:eht-imaging
 ```
+When the image is done building, run 
 ```
 docker run -it -p 9000:8888 globalcomputinglab/reproducibility-eht:eht-imaging
 ```
+This runs the container and forwards everything from port 8888 in the container to the local machine's port 9000 (or any other port number above), allowing you to interact with the container locally.
 
 ## Executing the Pipeline
 
@@ -34,6 +38,8 @@ bash scripts/run-pipeline.sh
 
 ## Post-Processing
 The black hole images shown in Paper IV uses the afmhot_10us colormap as well as a restoring beam for blurring. ```run-postprocessing.sh``` should run ```eht-imaging_postprocessing.py``` for the four days of observation and output a PDF of the image. There are some flags and edits you can make to the code to change the output.
+
+Additionally, you can uncomment the "timeline" code in `run-postprocessing.sh` to view the different stages of applied changes (original output from the pipeline -> correct colormap -> apply beam blur)
 
 *The post-processing is built into the main run script (`run-pipeline.sh`), but to edit the output images, use the separate post-processing run script (`run-postprocessing.sh`).*
 

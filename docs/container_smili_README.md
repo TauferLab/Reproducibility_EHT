@@ -19,12 +19,16 @@ please read the help document associated in the imaging script
   * `run_complete.sh` -- runs `run.sh` and `run_postprocessing.sh`, the whole SMILI pipeline
 
 ## Pulling and Running the Container
+The Docker image is available on our DockerHub [here](https://hub.docker.com/r/globalcomputinglab/reproducibility-eht/tags). Pull the `smili` container using the command
+
 ```
 docker pull globalcomputinglab/reproducibility-eht:smili
 ```
+When the image is done building, run 
 ```
 docker run -it -p 9000:8888 globalcomputinglab/reproducibility-eht:smili
 ```
+This runs the container and forwards everything from port 8888 in the container to the local machine's port 9000 (or any other port number above), allowing you to interact with the container locally.
 
 ## Executing the Pipeline
 From `~/Src_EHT/smili`, you can execute the pipeline and post-processing with the following command

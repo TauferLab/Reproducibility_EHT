@@ -11,28 +11,26 @@
 # ('-a', '--all'       , default=False, help="perform all post-processing steps")
 
 # Traverse output dir and apply post-processing to each .fits file
-# This creates the final replicated image from each of the pipline output images
 for d in 095 096 100 101; do
     python eht-imaging_postprocessing.py \
-        -i  ../../output/EHT-Imaging/SR1_M87_2017_${d}.fits \
-        -o  ../../output/EHT-Imaging/SR1_M87_2017_${d}_processed.pdf \
-        --all
+        -i  ../output/SR1_M87_2017_${d}.fits \
+        -o  ../output/SR1_M87_2017_${d}_processed.pdf \
+        --blur --afmhot10us --notitle
 done
 
-# For succesion / timeline of steps as presented in UTK eScience21 Poster:
-# fits -> pipeline output image -> EHTIM script: none(afmhot) -> EHTIM script: none(afmhot_10us) -> EHTIM script: blur(afmhot_10us)
+# For succesion / timeline of steps:
+# fits -> pipeline output image -> EHTIM script: none(afmhot) -> EHTIM script: blur(afmhot) -> EHTIM script: blur(afmhot_10us)
 #python eht-imaging_postprocessing.py \
-#    -i  ../../output/EHT-Imaging/SR1_M87_2017_101.fits \
-#    -o  ../../output/EHT-Imaging/SR1_M87_2017_101_afmhot.pdf \
+#    -i  ../output/SR1_M87_2017_101.fits \
+#    -o  ../output/SR1_M87_2017_101_afmhot.pdf \
 #    --notitle
 
 #python eht-imaging_postprocessing.py \
-#    -i  ../../output/EHT-Imaging/SR1_M87_2017_101.fits \
-#    -o  ../../output/EHT-Imaging/SR1_M87_2017_101_afmhot10us.pdf \
+#    -i  ../output/SR1_M87_2017_101.fits \
+#    -o  ../output/SR1_M87_2017_101_afmhot10us.pdf \
 #    --notitle --afmhot10us
 
 #python eht-imaging_postprocessing.py \
-#    -i  ../../output/EHT-Imaging/SR1_M87_2017_101.fits \
-#    -o  ../../output/EHT-Imaging/SR1_M87_2017_101_afmhot10us_blur.pdf \
+#    -i  ../output/SR1_M87_2017_101.fits \
+#    -o  ../output/SR1_M87_2017_101_afmhot10us_blur.pdf \
 #    --blur --notitle --afmhot10us
-

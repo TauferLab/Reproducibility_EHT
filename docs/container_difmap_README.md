@@ -18,16 +18,20 @@ This includes:
   * `difmap.sh and run.sh` -- shell scripts provided by EHT to run the `EHT_Difmap` DIFMAP script on each .uvfits file in `/data/uvfits` and outputs .fits files to `/difmap-output`
   * `difmap-postprocessing.py` -- Python script that creates a PDF image from a .fits file and puts it in `/difmap-pdfs`
   * `difmap-imgsum.py` -- Python script that generates a PDF summary of the data from given .fits and .uvfits files and puts it in `/difmap-imgsums`
-  * `d-pp.sh` -- shell script that runs `difmap-postprocessing.py` and `difmap-imgsum.py` on all the .fits files in `/difmap-output`
-  * `difmap-complete.sh` -- shell script that runs `run.sh` and `d-pp.sh`, the whole DIFMAP pipeline
+  * `run-postprocessing.sh` -- shell script that runs `difmap-postprocessing.py` and `difmap-imgsum.py` on all the .fits files in `/difmap-output`
+  * `difmap-complete.sh` -- shell script that runs `run.sh` and `run-postprocessing.sh`, the whole DIFMAP pipeline
 
 ## Pulling and Running the Container
+The Docker image is available on our DockerHub [here](https://hub.docker.com/r/globalcomputinglab/reproducibility-eht/tags). Pull the `difmap` container using the command
+
 ```
 docker pull globalcomputinglab/reproducibility-eht:difmap
 ```
+When the image is done building, run 
 ```
 docker run -it -p 9000:8888 globalcomputinglab/reproducibility-eht:difmap
 ```
+This runs the container and forwards everything from port 8888 in the container to the local machine's port 9000 (or any other port number above), allowing you to interact with the container locally.
 
 ## Executing the Pipeline
 From `~/DIFMAP/difmap`, you can execute the pipeline with the following command
@@ -36,9 +40,9 @@ From `~/DIFMAP/difmap`, you can execute the pipeline with the following command
 ```
 ## Post-Processing
 The black hole images shown in Paper IV uses the afmhot_10us colormap as well as a restoring beam for blurring.  
-```d-pp.sh``` will run post-processing for the four days of observation and output a PDF of the image. There are some flags and edits you can make to the code to change the output.
+```run-postprocessing.sh``` will run post-processing for the four days of observation and output a PDF of the image. There are some flags and edits you can make to the code to change the output.
 
-*The post-processing is built into the main run script (`difmap-complete.sh`), but to edit the output images, use the separate post-processing run script (`d-pp.sh`).*
+*The post-processing is built into the main run script (`difmap-complete.sh`), but to edit the output images, use the separate post-processing run script (`run-postprocessing.sh`).*
 
 ## Copying Output Images to Local Machine
 Obtain the container id of the latest entry with

@@ -19,9 +19,9 @@
 
 ## Data-Validation Container Build Instructions
 
-1. Docker image is available on our DockerHub [here](https://hub.docker.com/r/globalcomputinglab/reproducibility-eht/tags). Pull the `data-validation` container using the command `docker pull globalcomputinglab/reproducibility-eht:data-validation`.
+1. The Docker image is available on our DockerHub [here](https://hub.docker.com/r/globalcomputinglab/reproducibility-eht/tags). Pull the `data-validation` container using the command `docker pull globalcomputinglab/reproducibility-eht:data-validation`.
 
-2. Once it has finished building the image, please run the following command: `docker run -it -p 9000:8888 validate_data`. This runs the container and forwards everything from `port 8888` in the container to the local machine's `port 9000` (or any other port number above). This will allow you to interact with the container locally.
+2. Once the image has finished building, run the following command: `docker run -it -p 9000:8888 data-validation`. This runs the container and forwards everything from `port 8888` in the container to the local machine's `port 9000` (or any other port number above), allowing you to interact with the container locally.
 
 3. Voila! The Docker container should be ready to go! Please move on to the "Data Validation Jupyter Notebook Instructions" section below.
 
