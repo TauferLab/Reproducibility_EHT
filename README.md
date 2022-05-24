@@ -32,7 +32,3 @@ This contains
   * `/smili`  
     * post-processing script
     * script to generate "image summaries" (does not work within the container)
-  
-Please ensure
-* Documentation for containers matches behaviour
-* This README contains all the instructions to use the repository, license, references the paper, links original repos 
