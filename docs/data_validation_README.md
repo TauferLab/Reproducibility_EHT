@@ -71,9 +71,9 @@
 
 Here is what the outputs of the notebook (or `ReproducePlots.py` script):
 
-![All telescope baselines for all days](https://github.com/TauferLab/Src_EHT/blob/main/data_validation/expected_outputs/All_Frequencies.jpg)
+![All telescope baselines for all days](https://github.com/TauferLab/Reproducibility_EHT/blob/main/data_validation/expected_outputs/All_Frequencies.jpg)
 
-![Short telescope baselines](https://github.com/TauferLab/Src_EHT/blob/main/data_validation/expected_outputs/Close_Up_Frequencies.jpg)
+![Short telescope baselines](https://github.com/TauferLab/Reproducibility_EHT/blob/main/data_validation/expected_outputs/Close_Up_Frequencies.jpg)
 
-![Telescope baselines for all days - Both high and low](https://github.com/TauferLab/Src_EHT/blob/main/data_validation/expected_outputs/Reproduced_All_Days.jpg)
+![Telescope baselines for all days - Both high and low](https://github.com/TauferLab/Reproducibility_EHT/blob/main/data_validation/expected_outputs/Reproduced_All_Days.jpg)
 
