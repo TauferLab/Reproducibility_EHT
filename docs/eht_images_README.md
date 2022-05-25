@@ -2,7 +2,7 @@
 
 You can recreate the image seen in Figure 6b of our paper. It is a grid of output images from the EHT pipelines in our Docker containers. Copies of our outputs are included in `eht_images/` in the corresponding directories for convenience.
 
-![Expected Image Grid](https://github.com/TauferLab/Reproducibility_EHT/blob/main/data_validation/expected_outputs/final_comparison.png)
+![Expected Image Grid](https://github.com/TauferLab/Reproducibility_EHT/blob/main/data_validation/expected_outputs/final_comparison.jpg)
 
 
 ### Package Requirements
