@@ -43,6 +43,17 @@ Additionally, you can uncomment the "timeline" code in `run-postprocessing.sh` t
 
 *The post-processing is built into the main run script (`run-pipeline.sh`), but to edit the output images, use the separate post-processing run script (`run-postprocessing.sh`).*
 
+## Pipeline and Post-processing
+Run the Jupyter Notebook, execute:
+
+```
+cd ~/notebook
+jupyter-lab --ip 0.0.0.0 --no-browser
+```
+
+All notebook generated files are stored in the the ~/notebook dir. This is done to ease viewing and accessing images/files within the Jupyter session.
+
+
 ## Copying Output Images to Local Machine
 Obtain the container id of the latest entry with
 ```
