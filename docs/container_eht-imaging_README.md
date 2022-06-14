@@ -43,12 +43,26 @@ Additionally, you can uncomment the "timeline" code in `run-postprocessing.sh` t
 
 *The post-processing is built into the main run script (`run-pipeline.sh`), but to edit the output images, use the separate post-processing run script (`run-postprocessing.sh`).*
 
-## Pipeline and Post-processing
-Run the Jupyter Notebook, execute:
+---
 
+#### Optional: Run the Jupyter Notebook
+You can run the Jupyter notebook version of the post-processing script if you want to view the images as they are generated. To start the Jupyter Lab IDE, run the following commands:
 ```
 cd ~/notebook
 jupyter-lab --ip 0.0.0.0 --no-browser
+```
+
+In your local browser, go to `localhost:<port_number>`, port_number being the port you are forwarding to (such as `localhost:9000`). You will have to copy and paste the token that is generated in the URL (`token=...`). For example,
+
+```
+[C 2022-06-14 02:52:02.620 ServerApp]
+
+    To access the server, open this file in a browser:
+        file:///home/eht/.local/share/jupyter/runtime/jpserver-170-open.html
+    Or copy and paste one of these URLs:
+        http://0b710d47db10:8888/lab?token=81c1f1c36e1194315e1f2c96ec34282f8562b622c664eb85
+     or http://127.0.0.1:8888/lab?token=81c1f1c36e1194315e1f2c96ec34282f8562b622c664eb85
+
 ```
 
 All notebook generated files are stored in the the ~/notebook dir. This is done to ease viewing and accessing images/files within the Jupyter session.
