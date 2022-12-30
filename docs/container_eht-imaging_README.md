@@ -25,6 +25,8 @@ docker run -it -p 9000:8888 globalcomputinglab/reproducibility-eht:eht-imaging
 ```
 This runs the container and forwards everything from port 8888 in the container to the local machine's port 9000 (or any other port number above), allowing you to interact with the container locally.
 
+* **NOTE:** Do not use Docker Dashboard to launch the container. It will not start the container in the correct conda environments required to run the scripts.
+
 ## Executing the Pipeline
 
 There is no need to worry about unpacking the data or where it is located before executing the pipeline because the `run-pipeline.sh` script will automatically ensure it is in the correct location.
