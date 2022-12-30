@@ -46,10 +46,10 @@ Additionally, you can uncomment the "timeline" code in `run-postprocessing.sh` t
 ---
 
 #### Optional: Run the Jupyter Notebook
-You can run the Jupyter notebook version of the post-processing script if you want to view the images as they are generated. To start the Jupyter Lab IDE, run the following commands:
+You can run the Jupyter notebook version of the post-processing script if you want to view the images as they are generated. To start the Jupyter Notebook session, run the following commands:
 ```
 cd ~/notebook
-jupyter-lab --ip 0.0.0.0 --no-browser
+jupyter notebook --ip 0.0.0.0 --no-browser
 ```
 
 In your local browser, go to `localhost:<port_number>`, port_number being the port you are forwarding to (such as `localhost:9000`). You will have to copy and paste the token that is generated in the URL (`token=...`). For example,
